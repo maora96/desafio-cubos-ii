@@ -54,7 +54,6 @@ server.use(ctx => {
                 let produto = ctx.request.body;
                 estoque.push(produto);
                 successMessage(200, produto);
-                console.log(estoque)
             }
         } else if (ctx.method === "GET") {
             const url = ctx.url;
