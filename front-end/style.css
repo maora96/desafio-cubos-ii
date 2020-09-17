@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1D2226;
+    font-family: 'Manrope', sans-serif;
+}
+
+/* header */
+
+header {
+    background-color: #0F1C26;
+    padding: 1rem 0;
+}
+
+header .container {
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container .logo-search {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+header .container .logo-search .search-icon {
+    position: absolute;
+    left: 490px;
+}
+
+header input {
+    width: 450px;
+    height: 50px;
+    background-color: #171B1E;
+    color: #FDFDFD;
+    border: none;
+    padding: 1rem;
+    margin-left:.8rem;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    list-style-type: none;
+    margin-left:1rem;
+    margin-right:5rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+}
+
+header nav ul li a img {
+    margin-right: .5rem;
+}
+
+header .profile {
+    display: flex;
+    align-items: center;
+}
+
+header .profile span {
+    margin-right: 1rem;
+}
+
+.content {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-between;
+    /*align-items: center;*/
+}
+
+/* filmes */
+
+main {
+    width: 70%;
+}
+
+main .filmes .top {
+    margin-bottom: 2rem;
+}
+
+main .filmes .top-filmes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .filmes .filme-card {
+    width: 170px;
+    height: 300px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+main .filmes .top h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: .8rem;
+}
+
+main .filmes .title {
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: .6rem;
+    position: absolute;
+    bottom: 35px;
+}
+
+main .filmes .title .nota {
+    color: #FBCD6E;
+}
+
+main .filmes .add {
+    
+    position: absolute;
+    bottom: 8px;
+    
+    padding: 0 .4rem;
+    width: 150px;
+}
+
+main .filmes .add button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #A785ED;
+    border: none;
+    width: 150px;
+    padding: .4rem .4rem;
+    color: white;
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+
+main .filmes .star-top {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+main .filmes .geral h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: .8rem;
+}
+
+main .filmes .geral-filmes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+main .filmes .filtros {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+main .filmes .filtros button {
+    background: none;
+    border: 1px solid #4A4E51;
+    color: #4A4E51;
+    padding: .4rem;
+    width: 10rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main .filmes .filtros .active {
+    background-color: rgba(225, 131, 200, 0.2);
+    border: 1px solid #E183C8;
+    color: #E183C8;
+}
+
+/* sacola */
+
+.content aside .sacola {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 20px;
+    height: 550px;
+}
+
+.content aside .sacola h1 {
+    color: #FDFDFD;
+    background-color: #A785ED;
+    font-size:24px;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content aside .sacola .sacola-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sacola-content .sacola-vazia {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sacola-content .sacola-vazia h2, 
+.sacola-content .sacola-vazia h3 {
+    text-align: center;
+    color: white;
+}
+
+.sacola-content .sacola-vazia h2 {
+    font-size: 1.5rem;
+}
+
+.sacola-content .sacola-vazia h3 {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.sacola-content .sacola-vazia img {
+    object-fit: contain;
+}
+
+.sacola-content .cupom {
+    display: flex;
+    flex-direction: column;
+    color: #FDFDFD;
+    position: relative;
+    font-size: .8rem;
+    margin-top: 3rem;
+}
+
+.sacola-content .cupom input {
+    background-color: #0B1217;
+    border: none;
+    padding: .8rem;
+    margin-top: .5rem;
+}
+
+.sacola-content .cupom img {
+    position: absolute;
+    left: 210px;
+    top: 35px;
+}
