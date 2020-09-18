@@ -199,7 +199,8 @@ main .filmes .filtros .active {
     background-color: rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 20px;
-    height: 550px;
+    width: 300px;
+    height: auto;
 }
 
 .content aside .sacola h1 {
@@ -244,13 +245,76 @@ main .filmes .filtros .active {
     object-fit: contain;
 }
 
+.sacola-content .sacola-itens .item-img {
+    width: 43px;
+    height: 67px;
+    margin-right: 1rem;
+
+}
+
+.sacola-content .sacola-itens .item {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1.5rem;
+}
+
+.sacola-content .sacola-itens .item .item-content {
+    color: white;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.sacola-content .sacola-itens .item .item-quantidade {
+    display: flex;
+    align-items: center;
+}
+
+.sacola-content .sacola-itens .item .item-quantidade .more {
+    background-color: rgba(0, 0, 0, 0.37);
+    color: rgba(111, 207, 151, 1);
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 25px;
+}
+
+.sacola-content .sacola-itens .item .item-quantidade input {
+    width: 23px;
+    height: 24px;
+    padding: 0.3rem;
+    background: transparent;
+    border: none;
+    margin: 0 .4rem;
+    color: white;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.sacola-content .sacola-itens .item .item-quantidade .less {
+    background-color: rgba(0, 0, 0, 0.37);
+    width: 25px;
+    height: 25px;
+    padding: .2rem;
+}
+
+.sacola-content .sacola-itens .item .item-quantidade img {
+    object-fit: contain;
+    
+}
+
 .sacola-content .cupom {
     display: flex;
     flex-direction: column;
     color: #FDFDFD;
     position: relative;
     font-size: .8rem;
-    margin-top: 3rem;
 }
 
 .sacola-content .cupom input {
@@ -264,4 +328,17 @@ main .filmes .filtros .active {
     position: absolute;
     left: 210px;
     top: 35px;
+}
+
+.sacola-content button {
+    margin-top: 1rem;
+    padding: .8rem;
+    border: none;
+    background-color: #E25EBF;
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
