@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>movies | dados</title>
+    </head>
+    <body class="img-bg">
+
+        <header>
+            <div class="container">
+                <div class="logo-search">
+                    <img src="assets/logo.png" alt="logo">
+                    <img src="assets/search.png" alt="search icon" class="search-icon">
+                    <input type="text" placeholder="Pesquise filmes">
+                </div>
+    
+                <nav>
+                    <ul>
+                        <li><a href=""><img src="assets/favoritos.png" alt="">Favoritos</a></li>
+                        <li><a href=""><img src="assets/promos.png" alt="">Promoções</a></li>
+                    </ul>
+                </nav>
+    
+                <div class="profile">
+                    <span>Bem vindo Matheuso</span>
+                    <img src="assets/profile.png" alt="profile pic">
+                </div>
+            </div>
+        </header>      
+        
+        <div class="content-dados">
+            <section class="dados">
+
+                <div class="iniciais">
+                    <h1>Informações iniciais</h1>
+                    <form>
+                        <div class="first-column">
+                            <label>
+                                <span>Insira seu nome completo</span>
+                                <input type="text" id="nome" placeholder="Ex: Matheus Vinicius">
+                            </label>
+                            
+                            <label>
+                                Telefone
+                                <input type="tel" id="tel" placeholder="+55 (71) 9 9999-9999">
+                            </label> 
+                        </div>
+                        
+                        <div class="second-column">
+                            <label>
+                                Insira seu e-mail
+                                <input type="email" id="email" placeholder="Ex: mateusin@arroba.com">
+                            </label>
+                        </div>
+                        
+                        
+                    </form>
+                </div>
+
+                <div class="endereco">
+                    <h1>Informações de endereço</h1>
+                    <form>
+                        <div class="first-column">
+                            <label>
+                                CEP
+                                <input type="text" id="cep" placeholder="Ex: 00000-00">
+                            </label>
+
+                            <label>
+                                Cidade
+                                <input type="text" id="cidade" placeholder="Ex: Salvador">
+                            </label>
+
+                            <label>
+                                Número
+                                <input type="number" id="num" placeholder="Ex: 00">
+                            </label>
+
+                        </div>
+                        
+                        
+                        <div class="second-column">
+                            <label>
+                                País
+                                <input type="text" id="pais" placeholder="Ex: Brasil">
+                            </label>
+                            
+                            <label>
+                                Bairro
+                                <input type="text" id="bairro" placeholder="Ex: Graça">
+                            </label>
+                        </div>
+                        
+                    </form>
+                </div>
+
+                <div class="pagamento">
+                    <h1>Informações de pagamento</h1>
+                    <form>
+                        <div class="first-column">
+                            <label>
+                                Número do cartão
+                                <input type="number" id="cartao" placeholder="Ex: 00000 00000 0000">
+                            </label>
+
+                            <label>
+                                Data de expiração
+                                <input type="text" id="data" placeholder="MM/YYYY">
+                            </label>
+                        </div>
+
+                        <div class="second-column">
+                            <label>
+                                Nome do cartão
+                                <input type="text" id="nome-cartao" placeholder="Ex: MATHEUS VINICIUS">
+                            </label>
+
+                            <label>
+                                CVV
+                                <input type="number" id="cvv" placeholder="000">
+                            </label>
+                        </div>
+                        
+                    </form>
+                </div>
+            </section>
+
+            <aside>
+                <div class="sacola">
+                    <h1><img src="assets/bag.png" alt=""> Sacola</h1>
+                    <div class="sacola-content">
+                        <!--<div class="sacola-vazia">
+                            <h2>Sua sacola está vazia</h2>
+                            <h3>Adicone filmes agora</h3>
+                            <img src="assets/empty-bag.png" alt="sacola vazia">
+                        </div>-->
+
+                        <div class="sacola-itens">
+                            <div class="item">
+                                <img src="assets/movie.png" alt="" class="item-img">
+                                <div class="item-content">
+                                    <span>Joker</span>
+                                    <span>R$2.22</span>
+                                </div>
+
+                                <div class="item-quantidade">
+                                    <div class="more">
+                                        +
+                                    </div>
+                                    <input type="number" name="" id="">
+                                    <div class="less">
+                                        <img src="assets/Delete.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <img src="assets/movie.png" alt="" class="item-img">
+                                <div class="item-content">
+                                    <span>Joker</span>
+                                    <span>R$2.22</span>
+                                </div>
+
+                                <div class="item-quantidade">
+                                    <div class="more">
+                                        +
+                                    </div>
+                                    <input type="number" name="" id="">
+                                    <div class="less">
+                                        <img src="assets/Delete.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cupom">
+                            Insira seu cupom
+                            <input type="text" placeholder="Cupom de desconto">
+                            <img src="assets/ticket.png" alt="cupom image">
+                        </div>
+                        <button>
+                            <span>
+                                Confirme seus dados
+                            </span>    
+                            <span>
+                                R$4,44
+                            </span>
+                        </button>
+                    </div>
+                    
+                </div>
+            </aside>
+
+        </div>
+
+
+    </body>
+</html>
