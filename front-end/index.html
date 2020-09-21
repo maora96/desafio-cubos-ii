@@ -32,7 +32,25 @@
         <div class="content">
             <main>
                 <div class="promo">
-                    <img src="assets/promotion.png" alt="promo code">
+                    <div class="first-column">
+                        <h1>APROVEITE AGORA</h1>
+                        <span>
+                            <img src="assets/cupom-icon.png" alt="">
+                            CUPOM: htmlnaoelinguagem
+                        </span>
+                    </div>
+
+                    <div class="second-column">
+                        <h2>FINALIZA EM:</h2>
+                        <span>
+                            <img src="assets/timer-icon.png" alt="">
+                            <span class="timer">00:04:52</span>
+                        </span>
+                    </div>
+
+                    <div class="third-column">
+                        <img src="assets/money.png" alt="">
+                    </div>
                 </div>
                 <div class="filmes">
                     <div class="top">
@@ -132,11 +150,11 @@
                     <div class="geral">
                         <h1>Filmes</h1>
                         <div class="filtros">
-                            <button class="active">Todos</button>
-                            <button>Ação</button>
-                            <button>Romance</button>
-                            <button>Ficção Científica</button>
-                            <button>Terror</button>
+                            <button class="active" id="btn-all">Todos</button>
+                            <button id="btn-action">Ação</button>
+                            <button id="btn-romance">Romance</button>
+                            <button id="btn-sf">Ficção Científica</button>
+                            <button id="btn-terror">Terror</button>
                         </div>
 
                         <div class="geral-filmes">
@@ -418,30 +436,14 @@
                 <div class="sacola">
                     <h1><img src="assets/bag.png" alt=""> Sacola</h1>
                     <div class="sacola-content">
-                        <!--<div class="sacola-vazia">
+                        <div class="sacola-vazia">
                             <h2>Sua sacola está vazia</h2>
                             <h3>Adicone filmes agora</h3>
                             <img src="assets/empty-bag.png" alt="sacola vazia">
-                        </div>-->
+                        </div>
 
                         <div class="sacola-itens">
-                            <div class="item">
-                                <img src="assets/movie.png" alt="" class="item-img">
-                                <div class="item-content">
-                                    <span>Joker</span>
-                                    <span>R$2.22</span>
-                                </div>
-
-                                <div class="item-quantidade">
-                                    <div class="more">
-                                        +
-                                    </div>
-                                    <input type="number" name="" id="">
-                                    <div class="less">
-                                        <img src="assets/Delete.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
+                            
 
                             <div class="item">
                                 <img src="assets/movie.png" alt="" class="item-img">
@@ -463,7 +465,7 @@
                         </div>
                         <div class="cupom">
                             Insira seu cupom
-                            <input type="text" placeholder="Cupom de desconto">
+                            <input type="text" placeholder="Cupom de desconto" id="cupom-input">
                             <img src="assets/ticket.png" alt="cupom image">
                         </div>
                         <button>
