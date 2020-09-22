@@ -220,6 +220,19 @@ main .filmes .add button {
 }
 
 
+main .filmes .add button:hover {
+    background-color: #715E97;
+}
+
+
+main .filmes .add button:active {
+    background-color: #9380BA;
+}
+
+main .filmes .add button:disabled {
+    background-color: #898989;
+}
+
 main .filmes .star-top {
     position: absolute;
     top: 10px;
@@ -253,13 +266,25 @@ main .filmes .filtros button {
     font-family: 'Open Sans', sans-serif;
 }
 
+main .filmes .filtros button:hover {
+    background: none;
+    border: 1px solid #E183C8;
+    color: #E183C8;
+}
+
+main .filmes .filtros button:active {
+    background: none;
+    border: 1px solid #A785ED;
+    color: #A785ED;
+}
+
 main .filmes .filtros .active {
     background-color: rgba(225, 131, 200, 0.2);
     border: 1px solid #E183C8;
     color: #E183C8;
 }
 
-main .filmes .movie-img {
+main .filmes .movie-img, main .filmes .movie-img-top {
     width:100%;
     height: 100%;
     object-fit: cover;
@@ -353,6 +378,18 @@ aside .sacola .sacola-content {
     line-height: 25px;
 }
 
+
+
+.sacola-content .sacola-itens .item .item-quantidade .more:hover {
+    background-color: rgba(107, 107, 107, 0.37);
+}
+
+.sacola-content .sacola-itens .item .item-quantidade .more:active {
+    background-color: rgba(191, 191, 191, 0.37);
+}
+
+
+
 .sacola-content .sacola-itens .item .item-quantidade input {
     width: 23px;
     height: 24px;
@@ -397,6 +434,15 @@ input[type=number]::-webkit-outer-spin-button {
     color: #FDFDFD;
 }
 
+.sacola-content .cupom input:hover {
+    border: 1px solid #8C8C8C;
+}
+
+.sacola-content .cupom input:active {
+    border: 1px solid #FDFDFD;
+}
+
+
 .sacola-content .cupom img {
     position: absolute;
     left: 210px;
@@ -414,6 +460,23 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+
+.sacola-content button:hover {
+    background-color: #FFB6EB;
+}
+
+.sacola-content button:active {
+    background-color: #FFB6EB;
+    -webkit-box-shadow: 0px 8px 41px -5px rgba(226,94,191,1);
+    -moz-box-shadow: 0px 8px 41px -5px rgba(226,94,191,1);
+    box-shadow: 0px 8px 41px -5px rgba(226,94,191,1);
+}
+
+
+.sacola-content button:disabled {
+    background-color: #898989;
 }
 
 /* infos */
@@ -466,6 +529,15 @@ input[type=number]::-webkit-outer-spin-button {
 
 .dados form label input {
     width: 100%;
+    color: white;
+}
+
+.dados form label input:hover {
+   border: 1px solid #8C8C8C;
+}
+
+.dados form label input:active {
+    border: 1px solid #FDFDFD;
 }
 
 .dados .first-column {
@@ -494,6 +566,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 50%;
     padding: 2.5rem;
 }
@@ -516,7 +589,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: 700;
 }
 
-.confirm-box button {
+.confirm-box a {
     width: 50%;
     align-self: center;
     background-color: #E25EBF;
@@ -524,6 +597,9 @@ input[type=number]::-webkit-outer-spin-button {
     color: white;
     padding: 1rem;
     font-weight: 700;
+    text-align: center;
+    font-size: 1rem;
+    text-decoration: none;
 }
 
 .confirm .musician {

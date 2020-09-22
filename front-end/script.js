@@ -1,7 +1,3 @@
-/* filme ids */ 
-
-let ids = [];
-console.log(ids);
 
 /* top filmes */
 const topFilmes = document.querySelector(".top-filmes");
@@ -26,16 +22,40 @@ const btnTerror = document.querySelector("#btn-terror");
 
 /* sacola */ 
 
-const div = document.querySelectorAll(".add");
-const buttons = document.querySelectorAll(".add > button");
+const sacola = document.querySelector(".sacola");
+const btnSacola = document.querySelector("button");
+console.log(btnSacola)
+const btnsTop = document.querySelectorAll(".top-filmes .add > button");
+const btnsGeral = document.querySelectorAll(".geral-filmes .add > button");
 const emptyBag = document.querySelector(".sacola-vazia");
 const notEmpty = document.querySelector(".sacola-itens");
+const btnCheckout = sacola.querySelector("button");
+
+btnCheckout.addEventListener("click", () => {
+    let cupom = cupomInput.value;
+    localStorage.setItem("cupom", JSON.stringify(cupom));
+    document.location = "dados.html";
+    
+})
+
 
 let bag = [];
 
+let totalPrice = 0;
+let actualTotal = 0;
+const finalPrice = document.querySelector(".final-price");
+console.log(finalPrice)
 
+btnsTop.forEach(item => {
+    item.addEventListener("click", () => {
+        let filmeCard = item.closest(".filme-card");
+        let title = filmeCard.querySelector(".movie-title").innerText;
+        bag.push(title);
+        fillBag();
+    })
+})
 
-buttons.forEach(item => {
+btnsGeral.forEach(item => {
     item.addEventListener("click", () => {
         let filmeCard = item.closest(".filme-card");
         let title = filmeCard.querySelector(".movie-title").innerText;
@@ -58,148 +78,128 @@ function fillBag() {
                             count++
                         }
                     })
-
                     item.qtd = count;
-
-
-
                     newBag.push(item);
                 }
-
-
-                newBag.forEach(movie => {
-                    if (item.id === movie.id) {
-                        const spans = notEmpty.querySelectorAll("span");
-                        if (spans.length === 0) {
-                            let item = document.createElement("div");
-                            item.classList.add("item");
-                                                
-                            let img = document.createElement("img");
-                            img.classList.add("item-img");
-                            let itemContent = document.createElement("div");
-                            itemContent.classList.add("item-content");
-                                                
-                            let spanTitle = document.createElement("span");
-                            spanTitle.classList.add("span-title");
-                                                
-                            let spanPrice = document.createElement("span");
-                    
-                            let itemQuantidade = document.createElement("div");
-                            itemQuantidade.classList.add("item-quantidade");
-                    
-                            let more = document.createElement("div");
-                            more.classList.add("more");
-                    
-                            let input = document.createElement("input");
-                                                
-                            let less = document.createElement("div");
-                            less.classList.add("less");
-                    
-                            let deleteImg = document.createElement("img");
-                                                
-                            deleteImg.src = "assets/delete.png";
-                    
-                            spanPrice.classList.add("span-price");
-                            spanTitle.innerText = movie.title;
-                            img.src = movie.poster_path;
-                            spanPrice = `R$${movie.price}`;
-                            input.type = "number";
-                            input.value = movie.qtd;
-                            more.innerText = "+";
-                            less.append(deleteImg);
-                            itemQuantidade.append(more, input, less);
-                            notEmpty.append(item);
-                            itemContent.append(spanTitle, spanPrice)
-                            item.append(img, itemContent, itemQuantidade);
-                        } else {
-                            for (let i = 0; i < spans.length; i++) {
-                                if (spans[i].innerText === movie.title) {
-                                    let item = spans[i].closest(".item");
-                                    let input = item.querySelector("input");
-                                    input.value = movie.qtd;
-                                    
-                                } else {}
-                                
-                            }
-
-                            
-                        }
-                        
-                    }
-
-                    console.log(newBag)
-                
-                
             })
- 
 
             
+            let node = notEmpty.querySelectorAll("*");
+            node.forEach(n => {
+                n.remove()
             })
-                                        
-                                        /*let item = document.createElement("div");
-                                        item.classList.add("item");
-                                        
-                                        let img = document.createElement("img");
-                                        img.classList.add("item-img");
-                                        
-                                        let itemContent = document.createElement("div");
-                                        itemContent.classList.add("item-content");
-                                        
-                                        let spanTitle = document.createElement("span");
-                                        spanTitle.classList.add("span-title");
-                                        
-                                        let spanPrice = document.createElement("span");
-            
-                                        let itemQuantidade = document.createElement("div");
-                                        itemQuantidade.classList.add("item-quantidade");
-            
-                                        let more = document.createElement("div");
-                                        more.classList.add("more");
-            
-                                        let input = document.createElement("input");
-                                        
-                                        let less = document.createElement("div");
-                                        less.classList.add("less");
-            
-                                        let deleteImg = document.createElement("img");
-                                        
-                                        deleteImg.src = "assets/delete.png";
-            
-                                        spanPrice.classList.add("span-price");
-                                        spanTitle.innerText = y.title;
-                                        img.src = y.poster_path;
-                                        spanPrice = `R$${y.price}`;
-                                        input.type = "number";
-                                        input.value = 0;
-                                        more.innerText = "+";
-                                        less.append(deleteImg);
-                                        itemQuantidade.append(more, input, less);
-                                        notEmpty.append(item);
-                                        itemContent.append(spanTitle, spanPrice)
-                                        item.append(img, itemContent, itemQuantidade);*/
-                                    
-                                        
-                  
-          
+
+            let prices = [];
+            newBag.forEach((movie, i) => {
+                let item = document.createElement("div");
+                item.classList.add("item");
+                
+                console.log(":(")
+                let img = document.createElement("img");
+                img.classList.add("item-img");
+                let itemContent = document.createElement("div");
+                itemContent.classList.add("item-content");
+                                                
+                let spanTitle = document.createElement("span");
+                spanTitle.classList.add("span-title");
+                                                
+                let spanPrice = document.createElement("span");
+                    
+                let itemQuantidade = document.createElement("div");
+                itemQuantidade.classList.add("item-quantidade");
+                    
+                let more = document.createElement("div");
+                more.classList.add("more");
+                    
+                let input = document.createElement("input");
+                                                
+                let less = document.createElement("div");
+                less.classList.add("less");
+                    
+                let deleteImg = document.createElement("img");
+                                                
+                deleteImg.src = "assets/delete.png";  
+                spanPrice.classList.add("span-price");
+                spanTitle.innerText = movie.title;
+                img.src = movie.poster_path;
+                spanPrice = `R$${movie.price}`;
+                input.type = "number";
+                input.value = movie.qtd;
+                more.innerText = "+";
+                more.addEventListener("click", () => {
+                    movie.qtd = movie.qtd + 1;
+                    console.log("mais")
+                    console.log(movie.qtd)
+                    input.value = movie.qtd;
+                    
+
+                })
+                less.append(deleteImg);
+                less.addEventListener("click", () => {
+                    movie.qtd = 0;
+                    newBag.splice(i, 1);
+                    
+                    bag.forEach((x, y) => {
+                        if (x === movie.title) {
+                            bag.splice(y, 1);
+                        } 
+                    })
+                    
+                    item.remove();
+                })
+                itemQuantidade.append(more, input, less);
+                notEmpty.append(item);
+                itemContent.append(spanTitle, spanPrice)
+                item.append(img, itemContent, itemQuantidade);
+                let total = 0;
+                total += movie.qtd * movie.price;
+                prices.push(total);
+                actualTotal = prices.reduce((x, i) =>{
+                    return i + x;
+                }, 0)
+
+                addPromo();   
+                localStorage.setItem("bag", JSON.stringify(newBag));
+                 
+            })
+
         })
+
+        
+
+    }
+
+
+function addPromo() {
+    if (cupomInput.value === "HTMLNAOELINGUAGEM") {
+        finalPrice.innerText = `R$ ${actualTotal / 2}`
+    } else {
+        finalPrice.innerText = `R$ ${actualTotal}`
+    }
 }
+
 
 let bagInterval = setInterval(() => {
     if (bag.length > 0) {
         emptyBag.style.display = "none";
         notEmpty.style.display = "block";
+        btnSacola.disabled = false;
     } else {
         emptyBag.style.display = "flex";
         notEmpty.style.display = "none";
+        btnSacola.disabled = true;
     }
 }, 1000);
+
 
 /* timer */
 const timer = document.querySelector(".timer");
 const promo = document.querySelector(".promo");
 const cupomInput = document.querySelector("#cupom-input");
+
 promo.addEventListener("click", () => {
-    cupomInput.value = "HTMLNAOELINGUAGEM"
+    cupomInput.value = "HTMLNAOELINGUAGEM";
+    finalPrice.innerText = `R$ ${actualTotal / 2}`
 })
 
 let time = 300;
@@ -260,6 +260,12 @@ btnAll.addEventListener("click", () => {
                     item.innerText = results[i].price;
                 })
             })
+
+            btnAction.classList.remove("active");
+            btnAll.classList.add("active");
+            btnRomance.classList.remove("active");
+            btnSF.classList.remove("active");
+            btnTerror.classList.remove("active");
         })
 })
 
@@ -291,6 +297,11 @@ btnAction.addEventListener("click", () => {
                     item.innerText = results[i].price;
                 })
             })
+            btnAction.classList.add("active");
+            btnAll.classList.remove("active");
+            btnRomance.classList.remove("active");
+            btnSF.classList.remove("active");
+            btnTerror.classList.remove("active");
         })
 })
 
@@ -322,6 +333,11 @@ btnRomance.addEventListener("click", () => {
                     item.innerText = results[i].price;
                 })
             })
+            btnAction.classList.remove("active");
+            btnAll.classList.remove("active");
+            btnRomance.classList.add("active");
+            btnSF.classList.remove("active");
+            btnTerror.classList.remove("active");
         })
 })
 
@@ -353,6 +369,11 @@ btnSF.addEventListener("click", () => {
                     item.innerText = results[i].price;
                 })
             })
+            btnAction.classList.remove("active");
+            btnAll.classList.remove("active");
+            btnRomance.classList.remove("active");
+            btnSF.classList.add("active");
+            btnTerror.classList.remove("active");
         })
 })
 
@@ -384,6 +405,11 @@ btnTerror.addEventListener("click", () => {
                     item.innerText = results[i].price;
                 })
             })
+            btnAction.classList.remove("active");
+            btnAll.classList.remove("active");
+            btnRomance.classList.remove("active");
+            btnSF.classList.remove("active");
+            btnTerror.classList.add("active");
         })
 })
 
@@ -392,9 +418,7 @@ fetch("https://tmdb-proxy-workers.vhfmag.workers.dev/3/discover/movie?language=p
     .then(dataJson => {
         let results = dataJson.results;
 
-        results.forEach(item => {
-            ids.push(item.id)
-        })
+    
         /* top filmes */ 
         title.forEach((item, i) => {
             results.forEach(x => {
@@ -448,10 +472,9 @@ fetch("https://tmdb-proxy-workers.vhfmag.workers.dev/3/discover/movie?language=p
         console.log(results)
     })
 
-fetch("https://tmdb-proxy-workers.vhfmag.workers.dev/3/genre/movie/list?language=pt-BR")
-    .then(data => data.json())
-    .then(dataJson => console.log(dataJson))
 
-fetch("https://tmdb-proxy-workers.vhfmag.workers.dev/3/discover/movie?with_genres=28&language=pt-BR")
-    .then(data => data.json())
-    .then(dataJson => console.log(dataJson))
+    fetch("https://tmdb-proxy-workers.vhfmag.workers.dev/3/discover/movie?language=pt-BR")
+        .then(data => data.json())
+        .then(dataJson => {
+            console.log(dataJson.results)
+        }) 
