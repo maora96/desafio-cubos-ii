@@ -380,6 +380,7 @@ aside .sacola .sacola-content {
 
 
 
+
 .sacola-content .sacola-itens .item .item-quantidade .more:hover {
     background-color: rgba(107, 107, 107, 0.37);
 }
@@ -408,9 +409,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 .sacola-content .sacola-itens .item .item-quantidade .less {
     background-color: rgba(0, 0, 0, 0.37);
+    color: rgba(111, 207, 151, 1);
     width: 25px;
     height: 25px;
-    padding: .2rem;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 25px;
 }
 
 .sacola-content .sacola-itens .item .item-quantidade img {
